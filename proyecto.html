@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Check-List Semanal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="fondo"></div>
+
+  <div class="container">
+    <!-- Botón para activar modo noche -->
+    <img src="luna.png" id="btn-noche" alt="modo noche" class="icono-luna" />
+
+    <h1><span class="highlight">Mi</span> Check-List</h1>
+
+    <!-- Frase motivacional -->
+    <div class="postit-dia" id="postit-dia">
+      <span id="frase-motivacional"></span>
+      <button id="otro-postit">💡 Otro</button>
+    </div>
+
+    <!-- Área para ingresar nueva tarea -->
+    <div class="input-group">
+      <input type="text" id="nueva-tarea" placeholder="Escribe tu tarea" />
+      <select id="categoria">
+        <option value="personal">Personal</option>
+        <option value="estudio">Estudio</option>
+        <option value="salud">Salud</option>
+      </select>
+      <select id="prioridad">
+        <option value="baja">🟢 Baja</option>
+        <option value="media">🟡 Media</option>
+        <option value="alta">🔴 Alta</option>
+      </select>
+      <select id="dia-semana">
+        <option value="lunes">Lunes</option>
+        <option value="martes">Martes</option>
+        <option value="miercoles">Miércoles</option>
+        <option value="jueves">Jueves</option>
+        <option value="viernes">Viernes</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo</option>
+      </select>
+      <input type="date" id="fecha-tarea" />
+      <input type="time" id="hora-tarea" />
+      <button onclick="agregarTarea()">➕</button>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <button onclick="filtrarTareas('todas')">Todas</button>
+      <button onclick="filtrarTareas('completadas')">Completadas</button>
+      <button onclick="filtrarTareas('pendientes')">Pendientes</button>
+      <button onclick="ordenarPorFavoritos()">⭐ Favoritos</button>
+    </div>
+
+    <!-- Lista general (opcional) -->
+    <ul id="lista-tareas" class="checklist"></ul>
+  </div>
+
+  <!-- Tablero semanal -->
+  <div class="tablero-semanal">
+    <h2>Plan Semanal 🗓</h2>
+    <div class="semana">
+      <div class="dia" id="lunes"><h3>Lunes</h3><ul></ul></div>
+      <div class="dia" id="martes"><h3>Martes</h3><ul></ul></div>
+      <div class="dia" id="miercoles"><h3>Miércoles</h3><ul></ul></div>
+      <div class="dia" id="jueves"><h3>Jueves</h3><ul></ul></div>
+      <div class="dia" id="viernes"><h3>Viernes</h3><ul></ul></div>
+      <div class="dia" id="sabado"><h3>Sábado</h3><ul></ul></div>
+      <div class="dia" id="domingo"><h3>Domingo</h3><ul></ul></div>
+    </div>
+  </div>
+</body>
+</html>
